@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 
 import {
@@ -26,6 +25,9 @@ function App() {
       <Router>
         <div className='App'>
           <Routes>
+
+            {/* Ruta por defecto que redirige al login */}
+            <Route path="/" element={<Navigate to="/login" replace />} />
 
             <Route
               path='/login'
