@@ -1,0 +1,82 @@
+//import { useState } from 'react'
+import './App.css'
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate  
+} from 'react-router-dom'
+
+
+import { AuthProvider } from './context/AuthContext'
+import ProtectedRoute from './components/ProtectedRoute'
+import PublicRoute from './components/PublicRoute'
+
+import LoginScreen from './components/LoginScreen'
+import Dashboard from './components/Dashboard'
+import SignupScreen from './components/SignupScreen'
+import BrandList from './components/brandList'
+import MotorcycleList from './components/MotorcycleList'
+
+function App() {
+
+  return (
+    <AuthProvider>     
+      <Router>
+        <div className='App'>
+          <Routes>
+
+            <Route
+              path='/login'
+              element={
+                <PublicRoute>
+                  <LoginScreen/>
+                </PublicRoute>
+              }
+            />
+
+            <Route
+              path='/signup'
+              element={
+                <PublicRoute>
+                  <SignupScreen/>
+                </PublicRoute>
+              }
+            />
+
+
+            <Route
+              path='/dashboard'
+              element={
+                <ProtectedRoute>
+                  <Dashboard/>
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path='/brands'
+              element={
+                <ProtectedRoute>
+                  <BrandList/>
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path='/motorcycles'
+              element={
+                <ProtectedRoute>
+                  <MotorcycleList/>
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
+        </div>
+      </Router>
+    </AuthProvider>
+  )
+}
+
+export default App
