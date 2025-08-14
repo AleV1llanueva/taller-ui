@@ -187,7 +187,7 @@ const LoginScreen = () => {
 
         <div class="mt-6 text-center text-sm text-gray-600">
           No tienes una cuenta?{" "}
-          <Link to="/signup" className="text-pink-500 hover:text-pink-600">
+          <Link to="/signup" className="text-blue-600 hover:text-blue-700">
                     Regístrate
           </Link>
         </div>
