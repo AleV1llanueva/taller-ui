@@ -186,11 +186,10 @@ const LoginScreen = () => {
         </form>
 
         <div class="mt-6 text-center text-sm text-gray-600">
-          No tienes una cuenta?
-          <a href="/signup" class="text-blue-700 hover:text-blue-800 font-medium">
-            {" "}
-            Registrate
-          </a>
+          No tienes una cuenta?{" "}
+          <Link to="/signup" className="text-pink-500 hover:text-pink-600">
+                    Regístrate
+          </Link>
         </div>
       </div>
     </div>
